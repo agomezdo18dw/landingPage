@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+    <link href="{{ URL::asset('https://fonts.googleapis.com/css?family=Muli:300,400,700,900') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('/fonts/icomoon/style.css') }}">
 
     <link rel="stylesheet" href="{{ URL::asset('/css/bootstrap.min.css') }}">
@@ -31,6 +31,7 @@
     <link rel="stylesheet"
         href="{{ URL::asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('/css/botones.css') }}">
+
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -100,9 +101,53 @@
                                     <p class="mb-4" data-aos="fade-up" data-aos-delay="200">Encuentra tus lugares
                                         favoritos de la ciudad en la que te encuentres.</p>
                                     <p data-aos="fade-up" data-aos-delay="300">
-                                        <a href="#" class="btn btn-primary py-3 px-5 btn-pill">Iniciar Sesion</a>
+                                        <button type="button" class="btn btn-primary py-3 px-5 btn-pill"
+                                            data-toggle="modal" data-target="#exampleModalCenter">
+                                            Iniciar Sesion
+                                        </button>
                                     </p>
 
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Iniciar sesion
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <form>
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">Correo electronico</label>
+                                                            <input type="email" class="form-control"
+                                                                id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                                placeholder="Correo electronico">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputPassword1">Contraseña</label>
+                                                            <input type="password" class="form-control"
+                                                                id="exampleInputPassword1" placeholder="Contraseña">
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input"
+                                                                id="exampleCheck1">
+                                                            <label class="form-check-label" for="exampleCheck1">Mantenerme iniciada la sesion</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Iniciar sesion</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="500">
@@ -306,8 +351,7 @@
                             class="icon-facebook"></i><span></span></a>
                     <a href="https://instagram.com" class="icon-button instagram"><i
                             class="icon-instagram"></i><span></span></a>
-                    <a href="https://github.com" class="icon-button github"><i
-                            class="icon-github"></i><span></span></a>
+                    <a href="https://github.com" class="icon-button github"><i class="icon-github"></i><span></span></a>
                 </div>
                 <div class="row pt-5 mt-5 text-center">
                     <div class="col-md-12">
